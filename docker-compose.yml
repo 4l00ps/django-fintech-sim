@@ -14,7 +14,12 @@ services:
       - "8001:8001"
     networks:
       - fintech_net
-
+  issuer:
+    build:
+      context: ./issuer_service
+    container_name: issuer
+    ports:
+      - "8002:8002"
 networks:
   fintech_net:
     driver: bridge
